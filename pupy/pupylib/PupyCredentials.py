@@ -308,6 +308,7 @@ class Credentials(object):
 
         cert = X509.X509()
         cert.get_subject().O = self._generate_id(10)
+	cert.get_subject().CN = 'google.com'
         cert.get_subject().OU = role
         cert.set_serial_number(serial)
         cert.set_version(3)
